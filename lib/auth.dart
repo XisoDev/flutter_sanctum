@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'dart:io';
@@ -19,6 +21,8 @@ class AuthProvider extends ChangeNotifier {
     }, headers: {
       'Accept': 'application/json',
     });
+
+    log(response.body.toString());
 
     if (response.statusCode == 200) {
       String token = response.body;

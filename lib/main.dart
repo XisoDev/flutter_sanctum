@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Sanctum Books',
-      home: new Scaffold(
+      home: Scaffold(
         body: Center(
             child: Consumer<AuthProvider>(
               builder: (context, auth, child) {
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
                   case true:
                     return BookList();
                   default:
-                    return LoginForm();
+                    return const LoginForm();
                 }
               },
             )
